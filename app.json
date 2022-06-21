@@ -1,8 +1,8 @@
 {
-    "name": "Telegram group manager rose bot",
-    "description": "szrose is an all in one group management bot made for managing your group effectively with some advance security tools & Suit For All Your Needs ❤️",
-    "repository": "https://github.com/szsupunma/sz-rosebot",
-    "logo": "https://telegra.ph/file/38d48fa6ce357927d6d12.jpg",
+    "name": "Telegram group manager isabella bot",
+    "description": "Isabella is an all in one group management bot made for managing your group effectively with some advance security tools & Suit For All Your Needs ❤️",
+    "repository": "https://github.com/Hi-Tec-Robot/sz-rosebotclone",
+    "logo": "https://telegra.ph/file/0a8b98d9fef53f49213e1.jpg",
     "keywords": [
     "python3",
     "telegram",
@@ -12,7 +12,7 @@
     "pyrogram"
     ],
     "website": "https://szrosebot.ml",
-    "success_url": "https://t.me/szrosebot",
+    "success_url": "https://t.me/Miss_Isabella_Robot",
     "stack": "container",
     "env": {
         "BOT_TOKEN": {
