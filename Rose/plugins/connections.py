@@ -54,7 +54,7 @@ async def addconnection(client, message: Message, _):
     [
         [
             InlineKeyboardButton(
-                text="Connect me pm",
+                text="Connect To Chat",
                 url=f"t.me/{BOT_USERNAME}?start=connections",
             )
         ]
