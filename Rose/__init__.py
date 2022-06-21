@@ -12,15 +12,15 @@ from config import *
 import pymongo
 
 
-SUPPORT_GROUP = "https://t.me/slbotzone"
-SUDOERS = SUDO_USERS_ID
-LOG_GROUP_ID = LOG_GROUP_ID
+SUPPORT_GROUP = "https://t.me/HiTechRockets"
+SUDOERS = 1377217980
+LOG_GROUP_ID = -1001511567994
 MOD_LOAD = []
 MOD_NOLOAD = []
 bot_start_time = time.time()
 DB_URI = BASE_DB 
 MONGO_URL = MONGO_URL
-OWNER_ID = 1467358214
+OWNER_ID = 1377217980
 
 
 myclient = pymongo.MongoClient(DB_URI)
