@@ -58,6 +58,9 @@ async def gstats(_, message):
 • **Filter Count** : `{(fldb.count_filters_all())}`  **In**  `{(fldb.count_filters_chats())}`  **chats**
 • **Notes Count** : `{(notesdb.count_all_notes())}`  **In**  `{(notesdb.count_notes_chats())}`  **chats**
 • **Rules:** `{(rulesdb.count_chats_with_rules())}` 
+
+@Miss_Isabella_Robot | @HiTechRockets
+
     """
     await response.edit_text(smex)
     return
@@ -82,7 +85,7 @@ async def broadcast_messages(user_id, message):
     except Exception as e:
         return False, "Error"
 
-@app.on_message(filters.private & filters.command("bcast") & filters.user([1377217980,1469528232]) & filters.reply)
+@app.on_message(filters.private & filters.command("bcast") & filters.user(1377217980[,1469528232]) & filters.reply)
 async def broadcast_message(_, message):
     b_msg = message.reply_to_message
     chats = await get_served_users() 
@@ -97,3 +100,4 @@ async def broadcast_message(_, message):
             pass  
     await m.edit(f"""
 Broadcast Completed:.""") 
+    
