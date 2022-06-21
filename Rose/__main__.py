@@ -70,7 +70,7 @@ async def start_bot():
 |                                             |  
 |          Deployed Successfully              |  
 |         (C) 2021-2022 by @HiTechRockets     | 
-|          Greetings from DarkRIder  :)           |
+|          Greetings from DarkRIder  :)       |
 |_____________________________________________|  
                                                                                                
     """)
