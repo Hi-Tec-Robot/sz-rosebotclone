@@ -25,8 +25,8 @@ Night_mode = []
 def get_info(id):
     return nightmod.find_one({"id": id})
 
-# ---------- NIGHTMODE v2.0 -----------szsupunma------------------#
-# ---------- NIGHTMODE v2.0 -----------szsupunma------------------#
+# ---------- NIGHTMODE v2.0 -----------DarkRIder------------------#
+# ---------- NIGHTMODE v2.0 -----------DarkRider------------------#
 
 @app.on_message(command(NMODE) & can_change_filter)
 @language
@@ -163,7 +163,7 @@ async def night_mode(app, message):
                         "🌗 Night Mode Ending :)\n\n `Chat Opening...`",
                     )
                     await sed.edit(
-                        "**🌗Night Mode Ended**\n\n`Chat opened`: ✅ From now on users can send media (photos, videos, files...) and links in the group again.\n\n**Powered by @szrosebot**"
+                        "**🌗Night Mode Ended**\n\n`Chat opened`: ✅ From now on users can send media (photos, videos, files...) and links in the group again.\n\n**Powered by @Miss_Isabella_Robot**"
                     )
                     await app.set_chat_permissions(
                         id,
@@ -180,7 +180,7 @@ async def night_mode(app, message):
                     )
                     message.continue_propagation()
                     await sed.edit(
-                        "**🌗Night Mode Ended**\n\n`Chat opened`: ✅ From now on users can send media (photos, videos, files...) and links in the group again.\n\n**Powered by @szrosebot**"
+                        "**🌗Night Mode Ended**\n\n`Chat opened`: ✅ From now on users can send media (photos, videos, files...) and links in the group again.\n\n**Powered by @Miss_Isabella_Robot**"
                     )
             except:
                 return message.continue_propagation()
@@ -225,7 +225,7 @@ async def night_mode(app, message):
                         "🌗 Night Mode Starting :)\n\n`Chat closing...`",
                     )
                     await sed.edit(
-                        "**🌗Night Mode Started**\n\n `Chat closed` : ❌ From now on users can't send media (photos, videos, files...) and links in the group again.\n\n**Powered by @szrosebot**"
+                        "**🌗Night Mode Started**\n\n `Chat closed` : ❌ From now on users can't send media (photos, videos, files...) and links in the group again.\n\n**Powered by @Miss_Isabella_Robot**"
                     )
                     await app.set_chat_permissions(
                         id,
