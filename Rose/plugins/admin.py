@@ -280,7 +280,7 @@ async def adminlist_show(_, m: Message):
             await m.reply_text("Use /reload to reload admins!")
         else:
             ef = str(ef) + f"{admin_list}\n"
-            await m.reply_text("error : @slbotzone : `adminlist`")
+            await m.reply_text("error : @HiTechRockets : `adminlist`")
     return
 
 
@@ -364,7 +364,7 @@ Make it easy to promote and demote users with the admin module!
 - /adminlist: List the admins in the current chat.
 - /reload : Update the admin cache, to take into account new admins/admin permissions.
 
-Sometimes, you promote or demote an admin manually, and Rose doesn't realise it immediately. This is because to avoid spamming telegram servers, admin status is cached locally.
+Sometimes, you promote or demote an admin manually, and Isabella doesn't realise it immediately. This is because to avoid spamming telegram servers, admin status is cached locally.
 This means that you sometimes have to wait a few minutes for admin rights to update. If you want to update them immediately, you can use the /reload command;
 that'll force Rose to check who the admins are again. 
 """
