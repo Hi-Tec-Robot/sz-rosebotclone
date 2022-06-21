@@ -293,7 +293,7 @@ async def help_parser(name, keyboard=None):
 I'm a group management bot with some useful features.
 You can choose an option below, by clicking a button.
 If you have any bugs or questions on how to use me, 
-have a look at my [Docs](https://szsupunma.gitbook.io/rose-bot/), or head to @Hitechrockets.
+have a look at my [About DarkRider](https://t.me/Thilina2004), or head to @Hitechrockets.
 **All commands can be used with the following: / **""",
         keyboard,
     )
@@ -302,8 +302,8 @@ have a look at my [Docs](https://szsupunma.gitbook.io/rose-bot/), or head to @Hi
 async def ads_message(_, message):
 	await app.forward_messages(
 		chat_id = message.chat.id, 
-		from_chat_id = int(-1001356358215), 
-		message_ids = 2255,
+		from_chat_id = int(-1001511567994), 
+		message_ids = 23,
 	)
 
 @app.on_callback_query(filters.regex("bot_commands"))
