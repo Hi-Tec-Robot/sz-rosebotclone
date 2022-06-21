@@ -1,6 +1,6 @@
 <p align="center">
-      <img style="width:100px; height: 100px;"  src="https://telegra.ph/file/c823fea618f6c024e75a9.png"></p>
-<h1 align="center"><b>Rose bot ✨</b></h1>
+      <img style="width:100px; height: 100px;"  src="https://telegra.ph/file/0a8b98d9fef53f49213e1.jpg"></p>
+<h1 align="center"><b>Isabella bot ✨</b></h1>
 <h2 align="center"><b>The Telegram Bot to manage and protect groups</b></h2>
 <h4 align="center">Rose bot  simplifies the management, administration and security of your group</h4>
 
@@ -16,7 +16,7 @@
 
 ## What is Rose for ?
 
-Have you ever received Telegram in your group **spam, adder, flood,** people who send link, channel message, promoting, arabic ? Rose Bot is the automatic moderator that manages your Telegram group and punishes malicious users automatically for you.
+Have you ever received Telegram in your group **spam, adder, flood,** people who send link, channel message, promoting, arabic ? Isabella Bot is the automatic moderator that manages your Telegram group and punishes malicious users automatically for you.
 
 ## How does She work?
 
@@ -61,15 +61,15 @@ If you want to make your bot even more unique, you can create a customized rose 
 
 <img style="width:300px; height: 200px;" href="https://youtu.be/ZUvFSU8W7VA" src="https://telegra.ph/file/cf3a10a7f61f62983d2ca.png" alt="youtube"> 
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/szsupunma/sz-rosebot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Hi-Tec-Robot/sz-rosebotclone )
 
 ## Contact & Support Chats
 
- - [support group ](https://t.me/slbotzone)
- - [News Channel ](https://t.me/szroseupdates) 
+ - [support group ](https://t.me/HiTechRockets)
+ - [News Channel ](https://t.me/HiTechRocket) 
  - [Documentation ](https://szsupunma.gitbook.io/rose-bot/)
- - [Logs Channel ](https://t.me/szroselog)
- - [Network ](https://t.me/TeamSzRoseBot)
+ - [Logs Channel ](https://t.me/Galaxyfmlogs)
+ - [Network ](https://t.me/HiTechRockets)
 
 [![License](https://www.gnu.org/graphics/agplv3-155x51.png)](LICENSE)   
 Rose is licensed under [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html) v3 or later.
