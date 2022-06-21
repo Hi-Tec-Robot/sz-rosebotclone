@@ -35,7 +35,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 """ Going AFK(Away From Keyboard) """
-@app.on_message(filters.command(["afk", f"afk@szrosebot"]))
+@app.on_message(filters.command(["afk", f"afk@Miss_Isabella_Robot"]))
 async def going_afk(_, message: Message):
     if message.sender_chat:
         return
