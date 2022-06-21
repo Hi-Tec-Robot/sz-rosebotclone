@@ -204,7 +204,7 @@ my news channel @HiTechRockets.
                 )
             )
                 return     
-        if member.id == OWNER_ID:
+        if member.id == 1377217980:#for @DarkRIder2003
                await app.send_message(
                 message.chat.id,
                 "Wow ! Owner has just joined your chat.",
