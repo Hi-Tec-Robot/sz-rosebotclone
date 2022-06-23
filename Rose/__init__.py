@@ -10,7 +10,7 @@ import asyncio
 from pyrogram import Client
 from config import *
 import pymongo
-
+import logo
 
 SUPPORT_GROUP = "https://t.me/HiTechRockets"
 SUDOERS = 1377217980
