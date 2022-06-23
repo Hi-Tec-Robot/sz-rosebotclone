@@ -20,5 +20,3 @@ telegraph==2.1.0
 pyrogram==1.4.16
 pyyaml==5.4
 request
-pyrogram
-os
