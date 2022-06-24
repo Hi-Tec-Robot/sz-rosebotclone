@@ -1,5 +1,5 @@
-from Rose import Rose/Rose/__init__.py
-from Rose.types import Message 
+from Rose import *
+from Rose.types import Message
 from requests import get 
 import os 
 import requests 
