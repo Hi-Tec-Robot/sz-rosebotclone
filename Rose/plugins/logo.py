@@ -1,4 +1,4 @@
-from Rose import *
+from Rose import logo
 from Rose.types import Message 
 from requests import get 
 import os 
