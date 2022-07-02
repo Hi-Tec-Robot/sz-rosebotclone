@@ -49,9 +49,9 @@ async def gstats(_, message):
     datasiz = str(datasiz)
     storag = supun["storageSize"] / 1024
     smex = f"""
-	◈<u> ** v2.0 Stats Here**</u>◈
+◈<u> ** v2.0 Stats Here**</u>◈
 	
-	► <u>**System Stats**</u>
+► <u>**System Stats**</u>
 
 • **Ram:** `{ram}`
 • **Pyrogram Version:** `{pyrover}`
