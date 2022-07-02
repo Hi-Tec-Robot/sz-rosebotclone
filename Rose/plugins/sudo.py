@@ -37,7 +37,7 @@ async def gstats(_, message):
     for user in users:
         served_users.append(int(user["bot_users"]))   
     #------------------------------------------
-    serve_users = len(await gets_served_users())
+    served_users = len(await gets_served_users())
     serve_users = []
     user = await gets_served_users()
     for use in user:
