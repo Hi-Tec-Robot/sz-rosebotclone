@@ -24,6 +24,7 @@ async def gstats(_, message):
     )
     notesdb = Notes()
     rulesdb = Rules
+    welcome = Greetings
     fldb = Filters()
     served_chats = len(await get_served_chats())
     served_chats = []
@@ -35,15 +36,22 @@ async def gstats(_, message):
     users = await get_served_users()
     for user in users:
         served_users.append(int(user["bot_users"]))   
+    #------------------------------------------
+    serve_users = len(await gets_served_users())
+    serve_users = []
+    user = await gets_served_users()
+    for use in user:
+        serve_users.append(int(use["bots_users"]))  
+    #---------------------------------------------- 
     ram = (str(round(psutil.virtual_memory().total / (1024.0 ** 3))) + " GB")
     supun = dbn.command("dbstats")
     datasiz = supun["dataSize"] / 1024
     datasiz = str(datasiz)
     storag = supun["storageSize"] / 1024
     smex = f"""
-◈<u> ** v2.0 Stats Here**</u>◈
-
-► <u>**System Stats**</u>
+	◈<u> ** v2.0 Stats Here**</u>◈
+	
+	► <u>**System Stats**</u>
 
 • **Ram:** `{ram}`
 • **Pyrogram Version:** `{pyrover}`
