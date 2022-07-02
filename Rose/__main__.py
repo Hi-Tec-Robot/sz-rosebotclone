@@ -147,7 +147,8 @@ async def start(client, message: Message, _):
     if message.chat.type != "private":
         await message.reply(
             _["main2"], reply_markup=keyboard)
-	     return await add_served_chat(message.chat.id) 
+	await adds_served_user(message.from_user.id)
+	return await add_served_chat(message.chat.id) 
     if len(message.text.split()) > 1:
         name = (message.text.split(None, 1)[1]).lower()
         if name.startswith("rules"):
