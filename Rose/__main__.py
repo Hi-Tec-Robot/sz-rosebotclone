@@ -151,7 +151,7 @@ async def start(client, message: Message, _):
         return await add_served_chat(message.chat.id) 
     if len(message.text.split()) > 1:
         name = (message.text.split(None, 1)[1]).lower()
-        if name.startswith("rules"):
+        if name.startswith("learn"):
                 await get_private_rules(app, message, name)
                 return     
         elif "_" in name:
