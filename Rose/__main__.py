@@ -147,16 +147,16 @@ async def start(client, message: Message, _):
     if message.chat.type != "private":
         await message.reply(
             _["main2"], reply_markup=keyboard)
-	await adds_served_user(message.from_user.id)
-	return await add_served_chat(message.chat.id) 
+        await adds_served_user(message.from_user.id)     
+        return await add_served_chat(message.chat.id) 
     if len(message.text.split()) > 1:
         name = (message.text.split(None, 1)[1]).lower()
         if name.startswith("rules"):
                 await get_private_rules(app, message, name)
-                return
-	if name.startswith("learn"):
+                return     
+        if name.startswith("learn"):
                 await get_learn(app, message, name)
-                return
+                return     
         elif "_" in name:
             module = name.split("_", 1)[1]
             text = (_["main6"].format({HELPABLE[module].__MODULE__}
