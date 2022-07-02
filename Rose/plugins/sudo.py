@@ -53,12 +53,14 @@ async def gstats(_, message):
 
 ► <u>**Data Stats**</u>
 
-• **Served Chats:** `{len(served_chats)}`
-• **Served Users:** `{len(served_users)}`
+• **Total Chats:** `{len(served_chats)}`
+• **Bot PM Users:** `{len(served_users)}`
 • **Filter Count** : `{(fldb.count_filters_all())}`  **In**  `{(fldb.count_filters_chats())}`  **chats**
 • **Notes Count** : `{(notesdb.count_all_notes())}`  **In**  `{(notesdb.count_notes_chats())}`  **chats**
 • **Rules:** `{(rulesdb.count_chats_with_rules())}` 
-
+• **Total Users I see:**`{len(serve_users)}`
+• **Total welcome messages :** `{(welcome.count_chats)}`
+• **Total languages** : `10`
 @Miss_Isabella_Robot | @HiTechRockets
 
     """
