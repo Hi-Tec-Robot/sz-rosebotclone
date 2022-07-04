@@ -37,7 +37,7 @@ async def gstats(_, message):
     for user in users:
         served_users.append(int(user["bot_users"]))   
     #------------------------------------------
-    served_users = len(await gets_served_users())
+    serve_users = len(await gets_served_users())
     serve_users = []
     user = await gets_served_users()
     for use in user:
@@ -49,10 +49,7 @@ async def gstats(_, message):
     datasiz = str(datasiz)
     storag = supun["storageSize"] / 1024
     smex = f"""
-◈<u> ** v2.0 Stats Here**</u>◈
-	
-► <u>**System Stats**</u>
-
+** General Stats of Rose Bot**
 • **Ram:** `{ram}`
 • **Pyrogram Version:** `{pyrover}`
 • **DB Size:** `{datasiz[:6]} Mb`
