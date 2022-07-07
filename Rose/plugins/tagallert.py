@@ -63,8 +63,9 @@ async def mentioned_alert(client, message):
             input_str = input_str.replace("@", "  |")
             Rose = input_str.split("|")[1]
             text = Rose.split()[0]
-        if not taggeddb.find_one({f"teg": text}):
-          return      
+        isittrue = taggeddb.find_one({f"teg": text})    
+        if isittrue == None:
+          return   
         if text == message.chat:
           return 
         try:
@@ -75,13 +76,17 @@ async def mentioned_alert(client, message):
         user_ = message.from_user.mention or f"@{message.from_user.username}"
         
         final_tagged_msg = f"""
-**📨 You Have Been Tagged**
-• **Group:-** {chat_name}
-• **By User:-** {user_}
+**🗣 You Have Been Tagged**
+**Group:** {chat_name}
+**By User:** {user_}
+**Message:**
+{message.text} """
+        button_s = InlineKeyboardMarkup([[InlineKeyboardButton("📮 View Message", url=tagged_msg_link)]])
         """
-        button_s = InlineKeyboardMarkup([[InlineKeyboardButton("🔔 View Message", url=tagged_msg_link)]])
         try:
-            await client.send_message(chat_id=f"{text}", text=final_tagged_msg,reply_markup=button_s,disable_web_page_preview=True)
+            sz = await client.send_message(chat_id=f"{text}", text=final_tagged_msg,reply_markup=button_s,disable_web_page_preview=True)
+            pin = await sz.pin(disable_notification=True, both_sides=True)
+            await pin.delete()
             
         except:
             return message.continue_propagation()
