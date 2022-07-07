@@ -154,6 +154,9 @@ async def start(client, message: Message, _):
         if name.startswith("rules"):
                 await get_private_rules(app, message, name)
                 return     
+	if name.startswith("learn"):
+                await get_learn(app, message, name)
+                return
         if name.startswith("learn"):
                 await get_learn(app, message, name)
                 return     
