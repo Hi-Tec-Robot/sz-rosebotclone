@@ -8,6 +8,7 @@ from Rose.mongo.notesdb import Notes
 from Rose.mongo.rulesdb import Rules
 from Rose.mongo.usersdb import *
 from Rose.mongo.chatsdb import *
+from pyrofrom Rose.mongo.welcomedb import Greetings
 from pyrogram import __version__ as pyrover
 import asyncio
 import time
@@ -55,6 +56,7 @@ async def gstats(_, message):
 • **DB Size:** `{datasiz[:6]} Mb`
 • **Storage:** `{storag} Mb`
 • **Total Chats:** `{len(served_chats)}`
+• **Total Chats:** `{len(served_chats)}`
 • **Bot PM Users:** `{len(served_users)}`
 • **Filter Count** : `{(fldb.count_filters_all())}`  **In**  `{(fldb.count_filters_chats())}`  **chats**
 • **Notes Count** : `{(notesdb.count_all_notes())}`  **In**  `{(notesdb.count_notes_chats())}`  **chats**
@@ -63,7 +65,7 @@ async def gstats(_, message):
 • **Total languages** : `10`
 @Miss_Isabella_Robot | @HiTechRockets
 
-    """
+"""
     await response.edit_text(smex)
     return
 
