@@ -42,7 +42,6 @@ async def member_permissions(chat_id: int, user_id: int):
 
 admins_in_chat = {}
 
-
 async def list_admins(chat_id: int):
     return [ member.user.id
         async for member in app.iter_chat_members(
@@ -114,6 +113,7 @@ data = {
     "anonchannel":"anonchannel",
     "channel":"channel",
     "porn":"porn",
+    "spam":"spam",
 }
 incorrect_parameters = "Incorrect Parameters, Check Locks Section In Help."
 permdata = {
@@ -170,7 +170,6 @@ async def locks_dfunc(_, message):
         if "can_restrict_members" not in permissions:
             await message.reply_text(f"{message.from_user.mention},You need to be an admin with **restrict members** permission.")
             return
-
 
         permissions = await current_chat_permissions(chat_id)
         
@@ -1205,7 +1204,13 @@ async def porn_hub(client, message):
         return 
     file = await app.download_media(file_id)      
     try:
-        results = requests.get(f"https://api.safone.tech/nsfw?image={file}")
+        data = requests.get(f"https://api.safone.tech/nsfw?image={file}").json()
+        is_nsfw = data['data']['is_nsfw']
+        neutral = data['data']['neutral']
+        hentai = data['data']['hentai']
+        drawings = data['data']['drawings']
+        porn = data['data']['porn']
+        sexy = data['data']['sexy']
     except Exception:
         return 
     remove(file)
@@ -1213,7 +1218,7 @@ async def porn_hub(client, message):
     user_id = message.from_user.id if message.from_user else message.sender_chat.id
 
 
-    if results.is_nsfw=="true":
+    if is_nsfw == "true":
 
         if not lockdb.find_one({"porn": message.chat.id}):
            return
@@ -1227,11 +1232,12 @@ async def porn_hub(client, message):
                 f"""
 {sender}, Your message was deleted as it contain porn(s). 
 ==========================
-• **Porn:** `{results.porn} %`
-• **Hentai:** `{results.hentai} %`
-• **Sexy:** `{results.sexy} %`
-• **Drawings:** `{results.drawings} %`
-• **NSFW:** `{results.is_nsfw}`
+• **Porn:** `{porn} %`
+• **Neutral:** `{neutral} %`
+• **Hentai:** `{hentai} %`
+• **Sexy:** `{sexy} %`
+• **Drawings:** `{drawings} %`
+• **NSFW:** `{is_nsfw}`
 ==========================
 ❗️ porns are not allowed here""",
             )
@@ -1241,6 +1247,7 @@ async def porn_hub(client, message):
              message.continue_propagation()
     else:
             message.continue_propagation()
+
 @app.on_message(filters.incoming  & ~filters.linked_channel, group=channel)
 async def channel(client, message):
     chat_id = message.chat.id
@@ -1270,50 +1277,6 @@ async def spoiler(client, message):
     user_id = message.from_user.id if message.from_user else message.sender_chat.id
     if not lockdb.find_one({"spoiler": message.chat.id}):
         return
-    #==========================================================================================
-@app.on_message(
-        filters.incoming 
-        | ~filters.linked_channel,
-        group=spam
-)
-async def spam_locked(client, message):  
-    if not message.chat:
-        return  
-    try:
-        results = requests.get(f"https://api.safone.tech/spam?image={message}")
-    except Exception:
-        return 
-
-    user_id = message.from_user.id if message.from_user else message.sender_chat.id
-
-
-    if results.is_spam=="true":
-
-        if not lockdb.find_one({"spam": message.chat.id}):
-           return
-        if user_id in await list_admins(message.chat.id):
-            return  
-        try:
-         await message.delete()
-         sender = message.from_user.mention()
-         lol = await pbot.send_message(
-                message.chat.id,
-                f"""
-{sender}, Your message was deleted as it contain spam(s). 
-==========================
-• **Is Spam:** `{results.is_spam}`
-• **Spam Probability:** `{results.spam_probability}` %
-• **Spam:** `{results.spam}`
-• **Ham:** `{results.ham}`
-==========================
-❗️ spam are not allowed here""",
-            )
-         await asyncio.sleep(7)
-         await lol.delete()   
-        except:
-             message.continue_propagation()
-    else:
-            message.continue_propagation()
     if user_id in await list_admins(message.chat.id):
         return
     if message.entities:     
@@ -1331,6 +1294,9 @@ async def spam_locked(client, message):
                await lol.delete()   
             except:
               message.continue_propagation() 
+#==========================================================================
+#==========================================================================
+#==========================================================================
 
 
 #url lock help
@@ -1360,19 +1326,67 @@ def get_url(message_1: Message) -> Union[str, None]:
 
     return text[offset : offset + length]
 
+#==========================================================================================
+@app.on_message(
+        filters.incoming 
+        | ~filters.linked_channel,
+        group=spam
+)
+async def spam_locked(client, message):  
+    if not message.chat:
+        return  
+    try:
+        data = requests.get(f"https://api.safone.tech/spam?text={message}").json()
+        is_spam = data['data']['is_spam']
+        spam_probability = data['data']['spam_probability']
+        spam = data['data']['spam']
+        ham = data['data']['ham']
+    except Exception:
+        return 
+
+    user_id = message.from_user.id if message.from_user else message.sender_chat.id
+   
+
+    if is_spam=="true":
+
+        if not lockdb.find_one({"spam": message.chat.id}):
+           return
+        if user_id in await list_admins(message.chat.id):
+            return  
+        try:
+         await message.delete()
+         sender = message.from_user.mention()
+         lol = await pbot.send_message(
+                message.chat.id,
+                f"""
+{sender}, Your message was deleted as it contain spam(s). 
+==========================
+• **Is Spam:** `{is_spam}`
+• **Spam Probability:** `{spam_probability}` %
+• **Spam:** `{spam}`
+• **Ham:** `{ham}`
+==========================
+❗️ spam are not allowed here""",
+            )
+         await asyncio.sleep(7)
+         await lol.delete()   
+        except:
+             message.continue_propagation()
+    else:
+            message.continue_propagation()
+
+
 
 __MODULE__ = f"{Locks}"
 __HELP__ = """
 **Locks**
 Do stickers annoy you? or want to avoid people sharing links? or pictures? You're in the right place!
 The locks module allows you to lock away some common items in the telegram world; the bot will automatically delete them!
-
 **Admin commands:**
 - /lock <item(s)>: Lock one or more items. Now, only admins can use this type!
 - /unlock <item(s)>: Unlock one or more items. Everyone can use this type again!
 - /locks: List currently locked items.
 - /locktypes: Show the list of all lockable items.
-
 **Examples:**
 - Lock stickers with:
 • `/lock sticker`
