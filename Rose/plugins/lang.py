@@ -18,19 +18,22 @@ keyboard = InlineKeyboardMarkup(
             InlineKeyboardButton(
                 text="🇱🇷 English", callback_data="languages_en"
             ),
+         ], 
+        [
             InlineKeyboardButton(
                 text="🇱🇰 සිංහල", callback_data="languages_si"
-            )
+            ),
         ],
         [
             InlineKeyboardButton(
                 text="🇮🇳 हिन्दी", callback_data="languages_hi"
-            ),
-            InlineKeyboardButton(
-                text="🇮🇹 Italiano", callback_data="languages_it"
             )
+         
         ],
-        [
+        [   
+             InlineKeyboardButton(
+                text="🇮🇹 Italiano", callback_data="languages_it"
+            ),
             InlineKeyboardButton(
                 text="🇮🇳 తెలుగు", callback_data="languages_ta"
             ),
@@ -57,7 +60,7 @@ async def langs_command(client, message: Message, _):
     user = message.from_user.mention
     lang = await get_lang(message.chat.id)
     if chat_type == "private":
-      await message.reply_text("The list of available languages:".format(lang),
+      await message.reply_text("Choose Your languages\nඔබේ භාෂා තෝරන්න:".format(lang),
         reply_markup=keyboard,
      )
     elif chat_type in ["group", "supergroup"]:
@@ -70,7 +73,7 @@ async def langs_command(client, message: Message, _):
         ):
          return 
         try:   
-            await message.reply_text( "The list of available languages:".format(user),
+            await message.reply_text( "Choose Your languages\nඔබේ භාෂා තෝරන්න:".format(user),
         reply_markup=keyboard,
      )
         except Exception as e:
