@@ -1,4 +1,4 @@
-   from Rose import app
+from Rose import app
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from Rose.utils.commands import *
