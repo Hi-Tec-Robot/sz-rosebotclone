@@ -67,7 +67,7 @@ async def szcbot(_, message: Message):
         return
     chat = chatb.find_one({"chatbot":chat_id})   
     if chat:
-       await app.send_chat_action(message.chat.id, "typing")
+        await app.send_chat_action(message.chat.id, "typing")
         try:
            lang = tr.translate(message.text).src
            trtoen = (message.text if lang=="en" else tr.translate(message.text, dest="en").text).replace(" ", "%20")
@@ -89,12 +89,12 @@ async def szcbot(_, message: Message):
            lang = tr.translate(message.text).src
            trtoen = (message.text if lang=="en" else tr.translate(message.text, dest="en").text).replace(" ", "%20")
            text = trtoen.replace(" ", "%20") if len(message.text) < 2 else trtoen
-           safeone = requests.get(f"https://api.safone.tech/chatbot?message={text}&bot_name=Isabella&bot_master=DarkRider&user_id={user_id}")
+           safeone = requests.get(f"https://api.safone.tech/chatbot?message={text}&bot_name=Rose&bot_master=Supun&user_id={user_id}")
            textmsg = (safeone.json()["answer"])
            if "Affiliate+" in textmsg:
-               textmsg = textmsg.replace("Affiliate+", "Isabella")
+               textmsg = textmsg.replace("Affiliate+", "Rose")
            if "[Safone]" in textmsg:
-               textmsg = textmsg.replace("[Safone]", "Thilina Weerasekara")
+               textmsg = textmsg.replace("[Safone]", "Supun Maduranga")
            msg = tr.translate(textmsg, src='en', dest=lang)
            await message.reply_text(msg.text)
 
@@ -105,21 +105,14 @@ async def szcbot(_, message: Message):
 __MODULE__ = f"{Chat_Bot}"
 __HELP__ = """
 **Chatbot**
-
 AI based chatbot allows rose to talk and provides a more interactive group chat experience.
-
 - /chatbot [ON/OFF]: Enables and disables Affiliate + AI Chat bot.
-
-
 **Available chatbots**
 • Luna - Advanced, inteligent and cute chatbot which will keep you happy all time.. 
-
-
 **Language Support**
 Rose AI chatbot support almost all languages in world .
 Powered By ; `googletrans==3.1.0a0`
 """
-
 
 
 
