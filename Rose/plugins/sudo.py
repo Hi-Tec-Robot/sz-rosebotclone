@@ -8,7 +8,7 @@ from Rose.mongo.notesdb import Notes
 from Rose.mongo.rulesdb import Rules
 from Rose.mongo.usersdb import *
 from Rose.mongo.chatsdb import *
-from pyrofrom Rose.mongo.welcomedb import Greetings
+from Rose.mongo.welcomedb import Greetings
 from pyrogram import __version__ as pyrover
 import asyncio
 import time
@@ -50,7 +50,7 @@ async def gstats(_, message):
     datasiz = str(datasiz)
     storag = supun["storageSize"] / 1024
     smex = f"""
-** General Stats of Rose Bot**
+** General Stats of 🄸ꜱᴀʙᴇʟʟᴀ Bot**
 • **Ram:** `{ram}`
 • **Pyrogram Version:** `{pyrover}`
 • **DB Size:** `{datasiz[:6]} Mb`
