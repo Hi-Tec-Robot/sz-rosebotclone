@@ -4,6 +4,7 @@ import html
 import time
 from datetime import datetime
 from io import BytesIO
+from pyrogram.types import Message
 from Rose import ParseMode, Update
 from Rose.error import BadRequest, TelegramError, Unauthorized
 from Rose.ext import (
