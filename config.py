@@ -1,6 +1,5 @@
 from dotenv import load_dotenv
 from os import environ
-import BANNED_USERS
 
 load_dotenv("config.env")
 
