@@ -36,7 +36,7 @@ from pyrogram.types import (
     CallbackQuery,
     ChosenInlineResult
 )
-from Rose.plugins.wishper
+from Rose.plugins.wishper import *
 
 import json
 
