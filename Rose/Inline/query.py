@@ -22,7 +22,52 @@ from Rose.utils.string import (
     build_keyboard,
     parse_button,
 )
+from typing import Optional
+from Rose import app
+from pyrogram import filters, emoji
+from pyrogram.errors.exceptions.bad_request_400 import (
+    MessageIdInvalid, MessageNotModified
+)
+from pyrogram.types import (
+    User,
+    InlineQuery,
+    InlineQueryResultArticle,
+    InputTextMessageContent, InlineKeyboardMarkup, InlineKeyboardButton,
+    CallbackQuery,
+    ChosenInlineResult
+)
+from Rose.plugins.wishper import *
 
+import json
+
+try:
+    with open('data.json') as f:
+        whispers = json.load(f)
+except (FileNotFoundError, json.JSONDecodeError):
+    whispers = {}
+open('data.json', 'w').close()
+
+#===============================================================
+@app.on_chosen_inline_result()
+async def chosen_inline_result(_, cir: ChosenInlineResult):
+    query = cir.query
+    split = query.split(' ', 1)
+    len_split = len(split)
+    if len_split == 0 or len(query) > lengths \
+            or (query.startswith('@') and len(split) == 1):
+        return
+    if len_split == 2 and query.startswith('@'):
+        receiver_uname, text = split[0][1:] or '@', split[1]
+    else:
+        receiver_uname, text = None, query
+    sender_uid = cir.from_user.id
+    inline_message_id = cir.inline_message_id
+    whispers[inline_message_id] = {
+        'sender_uid': sender_uid,
+        'receiver_uname': receiver_uname,
+        'text': text
+    }
+#===============================================================
 db = {}
 dbf = Filters()
 dbns = Notes()
@@ -64,11 +109,30 @@ def number_() -> dict:
     return data
 
 
+
 @app.on_callback_query()
 async def cb_handler(bot, query):
     cb_data = query.data
     if query.data == "close_data":
         await query.message.delete()
+    if query.data == "show_whisper":
+        inline_message_id = query.inline_message_id
+        whisper = whispers[inline_message_id]
+        sender_uid = whisper['sender_uid']
+        receiver_uname: Optional[str] = whisper['receiver_uname']
+        whisper_text = whisper['text']
+        from_user: User = query.from_user
+        if receiver_uname and from_user.username \
+            and from_user.username.lower() == receiver_uname.lower():
+            await query.answer(whisper_text, show_alert=True)
+            return
+        if from_user.id == sender_uid or receiver_uname == '@':
+            await query.answer(whisper_text, show_alert=True)
+            return
+        if not receiver_uname:
+            await query.answer(whisper_text, show_alert=True)
+            return
+        await query.answer("😶 This is not for you", show_alert=True)
        
     if query.data == 'promote':
         user_id = query.data.split("_")[1]
@@ -347,7 +411,6 @@ async def cb_handler(bot, query):
         await query.message.edit_text(
             f"""
 **Current connected chat:**    
-
 **Group Name** : {title}
 **Group ID** : `{group_id}`
 **Member Count:**  `{hr.members_count}`   
@@ -364,7 +427,6 @@ async def cb_handler(bot, query):
         await query.message.edit_text(
             f"""
 **Actions are available with connected groups:**
-
  • View and edit Filters.
  • More in future!
             """,
