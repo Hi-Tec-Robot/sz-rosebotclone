@@ -163,7 +163,7 @@ async def night_mode(app, message):
                         "🌗 Night Mode Ending :)\n\n `Chat Opening...`",
                     )
                     await sed.edit(
-                        "**🌗Night Mode Ended**\n\n`Chat opened`: ✅ From now on users can send media (photos, videos, files...) and links in the group again.\n\n**Powered by @Miss_Isabe;;a_Robot**"
+                        "**🌗Night Mode Ended**\n\n`Chat opened`: ✅ From now on users can send media (photos, videos, files...) and links in the group again.\n\n**Powered by @Miss_Isabella_Robot**"
                     )
                     await app.set_chat_permissions(
                         id,
