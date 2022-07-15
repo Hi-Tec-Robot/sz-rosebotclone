@@ -69,7 +69,7 @@ async def start_bot():
  _____________________________________________   
 |                                             |  
 |          Deployed Successfully              |  
-|         (C) 2021-2022 by @HiTechRockets     | 
+|         (C) 2021-2022 by @InfinityBots      | 
 |          Greetings from DarkRIder  :)       |
 |_____________________________________________|  
                                                                                                
@@ -111,7 +111,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
             ),
             InlineKeyboardButton(
                 text="🔰News Channel",
-                url=f"https://t.me/HiTechRocket",
+                url=f"https://t.me/InfinityBots",
             )
         ],
     ]
@@ -297,7 +297,7 @@ async def help_parser(name, keyboard=None):
 I'm a group management bot with some useful features.
 You can choose an option below, by clicking a button.
 If you have any bugs or questions on how to use me, 
-have a look at my [About DarkRider](https://t.me/Thilina2004), or head to @Hitechrockets.
+have a look at my [About DarkRider](https://t.me/Thilina2004), or head to @Infinity_Bots_Support.
 **All commands can be used with the following: / **""",
         keyboard,
     )
