@@ -63,7 +63,7 @@ async def gstats(_, message):
 • **Rules:** `{(rulesdb.count_chats_with_rules())}` 
 • **Total Users I see:**`{len(serve_users)}`
 • **Total languages** : `10`
-@Miss_Isabella_Robot | @HiTechRockets
+@Miss_Isabella_Robot | @InfinityBots
 
 """
     await response.edit_text(smex)
