@@ -30,7 +30,7 @@ async def nsfw_scan_command(_, message: Message):
         return await m.edit("Something went wrong.")
     file = await app.download_media(file_id)
     try:
-        results = requests.get(f"https://api.safone.tech/nsfw?image={file}")
+        results = requests.post(f"https://api.safone.tech/nsfw", files={'image': open(file, 'rb')}).json()
     except Exception as e:
         return await m.edit(str(e))
     remove(file)
@@ -58,7 +58,7 @@ async def scanNLP(_, message: Message):
     text = r.text or r.caption
     if not text:
         return await message.reply("Can't scan that")
-    data = requests.get(f"https://api.safone.tech/spam?text={text}")
+    data = requests.get(f"https://api.safone.tech/spam", json={'text': text}).json()
     data = data.result[0]
     msg = f"""
 **SPAm** scan Result Here ✅
