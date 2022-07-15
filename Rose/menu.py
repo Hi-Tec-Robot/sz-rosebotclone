@@ -8,10 +8,10 @@ fbuttons = InlineKeyboardMarkup(
         [
         [
             InlineKeyboardButton(
-                text="👥Support Group", url="https://t.me/HiTechRockets"
+                text="👥Support Group", url="https://t.me/+_KYakdE2pYZlNmE1"
             ),
             InlineKeyboardButton(
-                text="👤News Channel", url="https://t.me/HiTechRocket"
+                text="👤News Channel", url="https://t.me/InfinityBots"
             )
         ], 
         [
