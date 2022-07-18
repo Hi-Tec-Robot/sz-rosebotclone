@@ -12,7 +12,7 @@ from config import *
 import pymongo
 
 
-SUPPORT_GROUP = "https://t.me/HiTechRockets"
+SUPPORT_GROUP = "https://t.me/Infinity_Bot_Support"
 SUDOERS = 1377217980
 LOG_GROUP_ID = -1001511567994
 MOD_LOAD = []
