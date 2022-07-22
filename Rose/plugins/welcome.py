@@ -188,7 +188,7 @@ async def welcome(_, message: Message):
 
             await message.reply_text(
                     f"""
-Thanks for adding me to your {group_name}! Don't forget follow
+Thanks 😉 for adding me to your {group_name}! Don't forget follow
 my news channel @Miss_Isabella_Robot.
 **New to Me, Touch the below button and start me in PM**
                     """,
