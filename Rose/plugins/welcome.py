@@ -190,7 +190,7 @@ async def welcome(_, message: Message):
                     f"""
 Thanks 😉 for adding me to your {group_name}! Don't forget follow
 my news channel @Miss_Isabella_Robot.
-**New to Me, Touch the below button and start me in PM**
+**New to Me, Touch the below button and start Me in PM**
                     """,
                     reply_markup=InlineKeyboardMarkup(
             [
