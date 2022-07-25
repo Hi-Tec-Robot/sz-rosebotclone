@@ -4,7 +4,6 @@ from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
 
 supunma = """
 **Basic Locktypes available for a chat: **
-
 video
 audio
 document
@@ -37,19 +36,17 @@ spoiler
 spam
 porn
 anonchannel
-
 Rose will delete user's message if locked content is sent
 """
 
 @app.on_callback_query(filters.regex("_ucd"))
 async def commands_callbacc(_, CallbackQuery):
-    await app.send_message(
-        CallbackQuery.message.chat.id,
+    await CallbackQuery.message.edit(
         text=supunma,
         reply_markup=asuttons,
         disable_web_page_preview=True,
     )
-    await CallbackQuery.message.delete()
+
 
 asuttons = InlineKeyboardMarkup(
         [[
@@ -75,7 +72,6 @@ asuttons = InlineKeyboardMarkup(
 
 supunm = """
 **Permissions Locks Available for a chat:**
-
 send_messages
 send_stickers
 send_gifs
@@ -88,34 +84,28 @@ change_info
 invite_user
 pin_messages
 all_permissions
-
 """
 @app.on_callback_query(filters.regex("_kcd"))
 async def commands_callbacc(_, CallbackQuery):
-    await app.send_message(
-        CallbackQuery.message.chat.id,
+    await CallbackQuery.message.edit(
         text=supunm,
         reply_markup=asuttons,
         disable_web_page_preview=True,
     )
-    await CallbackQuery.message.delete()
+
 
 supunmas = """
 **Examples:**
-
 - Lock stickers with:
 > /lock sticker
 - You can lock/unlock multiple items by chaining them:
 > /lock sticker photo gif video
-
 """
 
 @app.on_callback_query(filters.regex("_lcd"))
 async def commands_callbacc(_, CallbackQuery):
-    await app.send_message(
-        CallbackQuery.message.chat.id,
+    await CallbackQuery.message.edit(
         text=supunmas,
         reply_markup=asuttons,
         disable_web_page_preview=True,
     )
-    await CallbackQuery.message.delete()
