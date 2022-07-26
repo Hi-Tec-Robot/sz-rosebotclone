@@ -3,7 +3,7 @@
 Isabella was online since 2021 and helped many admins to keep their groups effectively
 ```
 
-Isabella was created on , 2021. We are currently developing and maintaining the [WilliamButcherBot](https://github.com/thehamkercat/WilliamButcherBot) and [Alita_Robot](https://github.com/Divkix/Alita_Robot/) plugin, using only the [Pyrogram](https://docs.pyrogram.org/) libarry.
+Isabella was created on , March 20, 2021. We are currently developing and maintaining the [WilliamButcherBot](https://github.com/thehamkercat/WilliamButcherBot) and [Alita_Robot](https://github.com/Divkix/Alita_Robot/) plugin, using only the [Pyrogram](https://docs.pyrogram.org/) libarry.
 
 - Simple: Rose brings you the best tools with a simple easy to use manner & User Friendly Interactive UI, Fonts and Thumbnails
 
