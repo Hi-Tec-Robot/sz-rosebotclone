@@ -188,9 +188,9 @@ async def welcome(_, message: Message):
 
             await message.reply_text(
                     f"""
-Thanks 😉 for adding me to your {group_name}! Don't forget follow
-my news channel @Miss_Isabella_Robot.
-**New to Me, Touch the below button and start Me in PM**
+Thanks for adding me to your {group_name}! Don't forget follow
+my news channel @InfinityBots.
+**New to Me, Touch the below button and start me in PM**
                     """,
                     reply_markup=InlineKeyboardMarkup(
             [
@@ -211,7 +211,7 @@ my news channel @Miss_Isabella_Robot.
                 "Wow ! Owner has just joined your chat.",
             )
             
-        if member.id == 1467358214:#for @DarkRider2003
+        if member.id == 1377217980:#for @DarkRIder2003 
             return await app.send_message(
                 message.chat.id,
                 "Wow ! Developer has just joined your chat.",
@@ -299,8 +299,7 @@ async def member_has_left(_, message: Message):
                 text = text.replace("{last}", (await app.get_users(user_id).last_name))
 
             if status:
-                await app.send_message(
-                     chat_id=group_id,
+                await message.reply_text(
                      text=text,
                      reply_markup=button,
                      disable_web_page_preview=True,
