@@ -17,7 +17,7 @@ CBOT = get_command("CBOT")
 CBOTA = get_command("CBOTA")
 
 
-@app.on_message(filters.command("chatbot") & ~filters.edited& ~filters.private& admin_filter)
+@app.on_message(filters.command("chatbot") & ~filters.private& admin_filter)
 @language
 async def cbots(client, message: Message, _):
     group_id = str(message.chat.id)
@@ -40,8 +40,8 @@ async def cbots(client, message: Message, _):
     else:
         return await sex.edit(_["chatb1"])
     await sex.edit(f"✅ **Successfully** `{'Enabled' if lower_args=='on' else 'Disabled'}` ** Chat bot**")
-    
-@app.on_message(filters.text & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded & ~filters.private & ~filters.edited, group=cbot)
+
+@app.on_message(filters.text & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded & ~filters.private , group=cbot)
 async def szcbot(_, message: Message):
     chat_id = message.chat.id
     if not message.reply_to_message:
@@ -84,22 +84,16 @@ async def szcbot(_, message: Message):
                textmsg = textmsg.replace("[Safone]", "Supun Maduranga")
            msg = tr.translate(textmsg, src='en', dest=lang)
            await message.reply_text(msg.text)
-            
+
 __MODULE__ = Chat_Bot
 __HELP__ = """
 **Chatbot**
-
 AI based chatbot allows rose to talk and provides a more interactive group chat experience.
-
 - /chatbot [ON/OFF]: Enables and disables Affiliate + AI Chat bot.
-
-
 **Available chatbots**
-• Luna - Advanced, inteligent and cute chatbot which will keep you happy all time..
-
-
+• Luna - Advanced, inteligent and cute chatbot which will keep you happy all time.. 
 **Language Support**
-Isabella AI chatbot support almost all languages in world .
+Rose AI chatbot support almost all languages in world .
 Powered By ; `googletrans==3.1.0a0`
 """
 
