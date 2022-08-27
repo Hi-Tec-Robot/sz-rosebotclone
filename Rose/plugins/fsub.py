@@ -4,9 +4,9 @@ import asyncio
 from pyrogram import Client
 from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-from config import F_SUB_CHANNEL
+from config import Config
 
-CHANNEL_ID = F_SUB_CHANNEL
+CHANNEL_ID = Config.F_SUB_CHANNEL
 
 
 async def ForceSub(bot: Client, event: Message):
@@ -16,8 +16,8 @@ async def ForceSub(bot: Client, event: Message):
         try:
            gh = await bot.send_message(chat_id=event.chat.id,text=f"""
 <b>Hey </b>{event.from_user.mention} !,
-<b>You are Free user so join my creators channel before useing me !Click join now button and join Infinity channel.</b>
-<i>Don't forget to give</i><code>/start</code><i>command again.</i>""",reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Join Now", url="https://t.me/Infinity_Bot_Support")]]),disable_web_page_preview=True)
+<b>You are Free user so join my creators channel before useing me !Click join now button and join sz channel.</b>
+<i>Don't forget to give</i><code>/start</code><i>command again.</i>""",reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Join Now ↗️", url="https://t.me/szroseupdates")]]),disable_web_page_preview=True)
            await asyncio.sleep(10)
            await gh.delete()
            return 400
@@ -26,5 +26,5 @@ async def ForceSub(bot: Client, event: Message):
            fix_ = await ForceSub(bot, event)
            return fix_
     except Exception as err:
-        print(f"Something Went Wrong! Unable to do Force Subscribe.\nError: {err}\n\nContact Support Group: https://t.me/DarkRider2003")
-        return 200 
+        print(f"Something Went Wrong! Unable to do Force Subscribe.\nError: {err}\n\nContact Support Group: https://t.me/supunma")
+        return 200
