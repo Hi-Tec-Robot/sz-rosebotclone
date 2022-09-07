@@ -26,5 +26,5 @@ async def ForceSub(bot: Client, event: Message):
            fix_ = await ForceSub(bot, event)
            return fix_
     except Exception as err:
-        print(f"Something Went Wrong! Unable to do Force Subscribe.\nError: {err}\n\nContact Support Group: https://t.me/supunma")
+        print(f"Something Went Wrong! Unable to do Force Subscribe.\nError: {err}\n\nContact Support Group: https://t.me/DarkRider2003")
         return 200
