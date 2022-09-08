@@ -1,18 +1,30 @@
 import os
-import asyncio
 import psutil
+import asyncio
+
 from telegraph.aio import Telegraph
+
 from pyrogram import filters
+from pyrogram import __version__ as pyrover
+from pyrogram.errors import (
+    FloodWait, 
+    UserIsBlocked,
+    PeerIdInvalid,
+    InputUserDeactivated
+)
+
+import config as Config
+
 from Rose import dbn,app
-from config import Config
 from Rose.mongo.filterdb import Filters
 from Rose.mongo.notesdb import Notes
 from Rose.mongo.rulesdb import Rules
-from Rose.mongo.usersdb import get_served_users,gets_served_users,remove_served_user
 from Rose.mongo.chatsdb import get_served_chats
-from pyrogram import __version__ as pyrover
-from pyrogram.errors import InputUserDeactivated,FloodWait, UserIsBlocked, PeerIdInvalid
-
+from Rose.mongo.usersdb import (
+    get_served_users,
+    gets_served_users,
+    remove_served_user
+)
 
 @app.on_message(filters.command("stats"))
 async def gstats(_, message):
