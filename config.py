@@ -3,6 +3,7 @@ from os import environ
 
 load_dotenv("config.env")
 
+OWNER_ID = int(environ.get("OWNER_ID", "1377217980"))
 BOT_TOKEN = environ.get("BOT_TOKEN")
 API_ID = int(environ.get("API_ID"))
 API_HASH = environ.get("API_HASH")
